@@ -10,7 +10,7 @@
 	let selectedCandidate = null;
 	let currentPage = 1;
 	let sortAsc = true; // Track the sort order
-	const itemsPerPage = 6;
+	const itemsPerPage = 10;
   
 	const dispatch = createEventDispatcher();
   
@@ -69,10 +69,10 @@
   </style>
   
   <main class="container mt-4">
-	<input type="text" bind:value={searchQuery} placeholder="Search..." />
-	<button class="btn btn-primary" on:click={() => (currentPage = 1)}>Search</button>
+	<input type="text" bind:value={searchQuery} placeholder="Search..." class="form-control mb-3" />
+	<button class="btn btn-primary mb-3" on:click={() => (currentPage = 1)}>Search</button>
   
-	<div class="mt-3">
+	<div class="mb-3">
 	  <button class="btn btn-primary" on:click={toggleSortOrder}>Sort {sortAsc ? 'Asc' : 'Desc'}</button>
 	</div>
   
@@ -107,7 +107,6 @@
 		  </li>
 		{/each}
 	  </ul>
-  
 	{/if}
   </main>
   
